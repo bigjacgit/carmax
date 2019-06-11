@@ -6,9 +6,7 @@ def stages = [
     'Deploy'
 ]
 
-def nodeName = "aws-agents-all-regions"
-
-node(nodename) {
+node {
     agent any
 
     stages {
