@@ -3,7 +3,6 @@
 
 pipeline {
     agent any
-    def username = 'Jenkins'
 
     stages {
         stage('BuildInfo') {
