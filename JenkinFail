@@ -9,10 +9,10 @@ pipeline {
     }
     post {
         always {
-            junit '**/target/*.xml'
-        }
+           sh 'echo thanks'
+           }
         failure {
-           sh "failed"
+           sh 'echo failed'
         }
     }
 }
