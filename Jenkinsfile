@@ -28,6 +28,7 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'pwd'
+                sh 'whoami'
                 sh 'ls .aws'
                 sh 'aws s3 ls'
             }
