@@ -4,7 +4,7 @@ pipeline {
     agent any
     environment { 
         CL = 'clang'
-        BITBUCKET_COMMON_CREDS = credentials('jenkins-bitbucket-common-creds')
+        BITBUCKET_COMMON_CREDS = credentials('adminftp')
         // Using returnStdout
         JENKIN_USER = """${sh(
                 returnStdout: true,
