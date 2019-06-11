@@ -6,11 +6,18 @@ pipeline {
     def username = 'Jenkins'
 
     stages {
+        stage('BuildInfo') {
+            steps {
+                echo 'BuildInfo..'
+                echo 'Hello Mr. ${username}'
+                echo "I said, Hello Mr. ${username}"
+                echo "Job Name ${env.JOB_NAME}"
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo 'Hello Mr. ${username}'
-                echo "I said, Hello Mr. ${username}"
             }
         }
         stage('Test') {
