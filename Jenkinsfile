@@ -29,6 +29,8 @@ pipeline {
             }
             steps {
                 sh 'printenv'
+                sh 'pwd'
+                sh 'ls .aws'
             }
         }
     }
