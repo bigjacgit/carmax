@@ -1,0 +1,10 @@
+flyway.url = jdbc:oracle:thin:@//awsdwcis.cmb9y9m0crve.us-east-1.rds.amazonaws.com:1521/ORCL
+flyway.locations = filesystem:DB-Scripts/Common,filesystem:DB-Scripts/EnvSpecific/dev
+flyway.schemas = CICD_TEST
+flyway.baselineOnMigrate = false
+flyway.baselineVersion = 0
+
+rdsinstanceid = awsdwcis
+aws_region = us-east-1
+credentials_id = wcis-dev-db
+Create_Snapshot = false
