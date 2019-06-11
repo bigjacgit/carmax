@@ -29,6 +29,7 @@ pipeline {
                 sh 'printenv'
                 sh 'pwd'
                 sh 'ls .aws'
+                sh 'aws s3 ls'
             }
         }
     }
