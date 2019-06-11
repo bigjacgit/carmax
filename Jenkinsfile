@@ -5,9 +5,9 @@ pipeline {
     environment { 
         CL = 'clang'
         // Using returnStdout
-        CC = """${sh(
+        JENKIN_USER = """${sh(
                 returnStdout: true,
-                script: 'echo "clang"'
+                script: 'echo `whoami`'
             )}""" 
         // Using returnStatus
         EXIT_STATUS = """${sh(
@@ -17,8 +17,8 @@ pipeline {
     }
     stages {
         stage('Example01') {
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+            steps {                  
+                echo "${env.JENKIN_USER} is running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
         stage('Example02') {
