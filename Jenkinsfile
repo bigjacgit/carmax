@@ -31,7 +31,7 @@ pipeline {
                 sh 'whoami'
                 sh 'ls .aws'
                 sh 'aws --version'
-                sh 'aws sts get-caller-identity'
+                sh 'id'
             }
         }
     }
