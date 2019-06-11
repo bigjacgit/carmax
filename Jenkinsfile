@@ -8,7 +8,7 @@ pipeline {
         JENKIN_USER = """${sh(
                 returnStdout: true,
                 script: 'echo `whoami`'
-            )}""" 
+            ).trim()}""" 
         // Using returnStatus
         EXIT_STATUS = """${sh(
                 returnStatus: true,
