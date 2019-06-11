@@ -33,6 +33,9 @@ pipeline {
                 sh 'ls .aws'
                 sh 'aws --version'
                 sh 'aws s3 ls '
+                sh 'echo $BITBUCKET_COMMON_CREDS'
+                sh 'echo $BITBUCKET_COMMON_CREDS_USR'
+                sh 'echo $BITBUCKET_COMMON_CREDS_PSW'
             }
         }
     }
