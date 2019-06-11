@@ -30,7 +30,7 @@ pipeline {
                 sh 'pwd'
                 sh 'whoami'
                 sh 'ls .aws'
-                sh 'aws s3 ls'
+                sh 'aws --version'
             }
         }
     }
