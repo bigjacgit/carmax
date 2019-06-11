@@ -8,6 +8,7 @@ pipeline {
         stage('BuildInfo') {
             steps {
                 echo 'BuildInfo..'
+                def username = 'Jenkins'
                 echo 'Hello Mr. ${username}'
                 echo "I said, Hello Mr. ${username}"
                 echo "Job Name ${env.JOB_NAME}"
