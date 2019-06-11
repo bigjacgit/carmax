@@ -1,12 +1,5 @@
 #!/usr/bin/env groovy
 
-def stages = [
-    'Build',
-    'Test',
-    'Deploy'
-]
-
-def nodeName = "aws-agents-all-regions"
 
 pipeline {
     agent any
