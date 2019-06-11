@@ -1,10 +1,18 @@
 #!/usr/bin/env groovy
 
-def stages = {
-    'Build',
-    'Test',
-    'Deploy'
-}
+//@Library('my-shared-library') _
+
+@Library('hyperloop-db@db-template') _
+
+def stages = [
+    'Github Checkout',
+    'Flyway Info & Validate',
+    'Create RDS Snapshot',
+    'Migrate SQLs',
+    'Validate changes'
+]
+
+def nodeName = "aws-agents-all-regions"
 
 pipeline {
     agent any
