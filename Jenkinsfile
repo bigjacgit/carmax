@@ -4,6 +4,8 @@ pipeline {
     agent any
     environment { 
         CL = 'clang'
+        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
         // Using returnStdout
         JENKIN_USER = """${sh(
                 returnStdout: true,
