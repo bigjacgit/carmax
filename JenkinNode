@@ -1,0 +1,31 @@
+#!/usr/bin/env groovy
+
+def stages = [
+    'Build',
+    'Test',
+    'Deploy'
+]
+
+def nodeName = "aws-agents-all-regions"
+
+node(nodename) {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
