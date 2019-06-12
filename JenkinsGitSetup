@@ -29,7 +29,8 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'sh GitSetup.sh ${WORKSPACE}'
-                sh 'ls -ltra'
+                sh 'ls -ltra  > file2git'
+                sh 'sh GitPush.sh  ${WORKSPACE}'
             }
         }
     }
