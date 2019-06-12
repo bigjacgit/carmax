@@ -28,14 +28,8 @@ pipeline {
             }
             steps {
                 sh 'printenv'
+                sh 'sh GitSetup.sh ${WORKSPACE}'
                 sh 'mkdir -p ${WORKSPACE}/carmax'
-                sh 'cd ${WORKSPACE}/carmax'
-                sh 'pwd'
-                sh 'git init'
-                sh 'git config --global user.email "jacob.b.dba@gmail.com"'
-                sh 'git config --global user.name "jacob"'
-                sh 'ls -ltra'
-                sh 'git branch'
             }
         }
     }
