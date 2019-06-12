@@ -30,7 +30,7 @@ pipeline {
                 sh 'printenv'
                 sh 'pwd'
                 sh 'whoami'
-                sh 'ls .aws'
+                sh 'ls'
                 sh 'aws --version'
                 sh 'aws s3 ls '
                 sh 'echo $BITBUCKET_COMMON_CREDS'
