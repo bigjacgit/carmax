@@ -22,13 +22,20 @@ pipeline {
                 echo "${env.JENKIN_USER} is running ${env.BUILD_ID} on ${env.JENKINS_URL} from FIRST FOLDER"
             }
         }
-        stage('Example02') {
+        stage('Git Setup') {
             environment { 
                 DEBUG_FLAGS = '-g'
             }
             steps {
                 sh 'printenv'
                 sh 'sh GitSetup.sh ${WORKSPACE}'
+            }
+        }
+       stage('Git Push') {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }
+            steps {
                 sh 'ls -ltra  > ${WORKSPACE}/carmax/file2git'
                 sh 'sh GitPush.sh  ${WORKSPACE}'
             }
