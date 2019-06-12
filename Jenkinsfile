@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage('Example01') {
             steps {                  
-                echo "${env.JENKIN_USER} is running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                echo "${env.JENKIN_USER} is running ${env.BUILD_ID} on ${env.JENKINS_URL} from FIRST FOLDER"
             }
         }
         stage('Example02') {
