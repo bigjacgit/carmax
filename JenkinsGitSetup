@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'sh GitSetup.sh ${WORKSPACE}'
-                sh 'mkdir -p ${WORKSPACE}/carmax'
+                sh 'ls -ltra'
             }
         }
     }
