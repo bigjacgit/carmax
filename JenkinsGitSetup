@@ -1,0 +1,43 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent any
+    environment { 
+        CL = 'clang'
+        BITBUCKET_COMMON_CREDS = credentials('adminftp')
+        // Using returnStdout
+        JENKIN_USER = """${sh(
+                returnStdout: true,
+                script: 'echo `whoami`'
+            ).trim()}""" 
+        // Using returnStatus
+        EXIT_STATUS = """${sh(
+                returnStatus: true,
+                script: 'exit 1'
+            )}"""
+    }
+    stages {
+        stage('Example01') {
+            steps {                  
+                echo "${env.JENKIN_USER} is running ${env.BUILD_ID} on ${env.JENKINS_URL} from FIRST FOLDER"
+            }
+        }
+        stage('Example02') {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }
+            steps {
+            https://github.com/bigjacgit/carmax.git
+                sh 'printenv'
+                sh 'mkdir -p ${JENKIN_HOME}/carmax'
+                sh 'cd ${JENKIN_HOME}/carmax'
+                sh 'pwd'
+                sh 'git init'
+                sh 'git config --global user.email "jacob.b.dba@gmail.com"'
+                sh 'git config --global user.name "jacob"'
+                sh 'ls -ltra'
+                sh 'git branch'
+            }
+        }
+    }
+}
