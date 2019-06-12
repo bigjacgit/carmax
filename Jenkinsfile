@@ -35,7 +35,7 @@ pipeline {
                 sh 'echo $BITBUCKET_COMMON_CREDS'
                 sh 'echo $BITBUCKET_COMMON_CREDS_USR'
                 sh 'echo $BITBUCKET_COMMON_CREDS_PSW'
-                sh (script: 'sh test.sh', returnStdout: true).trim()
+                sh 'sh test.sh'
             }
         }
     }
