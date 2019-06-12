@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'sh GitSetup.sh ${WORKSPACE}'
-                sh 'ls -ltra  > ${WORKSPACE}\\carmax\\file2git'
+                sh 'ls -ltra  > ${WORKSPACE}/carmax/file2git'
                 sh 'sh GitPush.sh  ${WORKSPACE}'
             }
         }
