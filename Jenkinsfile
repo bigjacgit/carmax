@@ -36,6 +36,7 @@ pipeline {
                 sh 'echo $BITBUCKET_COMMON_CREDS_USR'
                 sh 'echo $BITBUCKET_COMMON_CREDS_PSW'
                 sh 'sh test.sh'
+                sh 'git branch'
             }
         }
     }
