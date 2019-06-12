@@ -14,5 +14,8 @@ pipeline {
         failure {
            sh 'echo failed'
         }
+        cleanup {
+           deleteDir()
+        }
     }
 }
