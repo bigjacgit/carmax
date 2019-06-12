@@ -27,7 +27,6 @@ pipeline {
                 DEBUG_FLAGS = '-g'
             }
             steps {
-            https://github.com/bigjacgit/carmax.git
                 sh 'printenv'
                 sh 'mkdir -p ${JENKIN_HOME}/carmax'
                 sh 'cd ${JENKIN_HOME}/carmax'
