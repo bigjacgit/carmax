@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'Greeting777', defaultValue: 'Hello', description: 'How should I greet the world?')
+        choice(choices:['VA_HappyFlow', 'NewYork_HappyFlow'], description: 'Select your testcase', name: 'Greeting') 
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo "${params.Greeting} World!"
+            }
+        }
+    }
+}
