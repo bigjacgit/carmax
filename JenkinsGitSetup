@@ -28,8 +28,8 @@ pipeline {
             }
             steps {
                 sh 'printenv'
-                sh 'mkdir -p ${JENKIN_HOME}/carmax'
-                sh 'cd ${JENKIN_HOME}/carmax'
+                sh 'mkdir -p ${WORKSPACE}/carmax'
+                sh 'cd ${WORKSPACE}/carmax'
                 sh 'pwd'
                 sh 'git init'
                 sh 'git config --global user.email "jacob.b.dba@gmail.com"'
