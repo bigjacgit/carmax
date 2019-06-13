@@ -1,0 +1,39 @@
+#!/usr/bin/env groovy
+
+properties = null
+
+@NonCPS
+def loadProperties() {
+	checkout scm
+	File propertiesFile = new File('${workspace}/pipeline.properties')
+	propertiesFile.withInputStream {
+			properties.load(propertiesFile)
+	}
+}
+
+pipeline {
+    agent none
+	
+	stages {
+        
+		stage ('prepare') {
+			agent any
+			
+			steps {
+				script {
+				loadProperties()
+				echo "${properties['repo']}"
+				}
+			}
+		}
+		stage('Build') {
+            
+			agent any
+			
+			steps {
+				sh 'echo ${properties.repo}'
+			}
+			
+        }
+    }
+}
