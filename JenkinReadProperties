@@ -5,7 +5,7 @@ properties = null
 @NonCPS
 def loadProperties() {
 	checkout scm
-	File propertiesFile = new File('${workspace}/pipeline.properties')
+	File propertiesFile = new File('${workspace}/properties')
 	propertiesFile.withInputStream {
 			properties.load(propertiesFile)
 	}
